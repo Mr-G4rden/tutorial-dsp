@@ -29,6 +29,7 @@ Fc_2 = 3500;
 %% Exercise
 len = 100;
 n = 0:len-1;
+t = n*Ts;
 
 x_0 = sin(+2*pi*Fc_0*n*Ts);
 x_1 = sin(+2*pi*Fc_1*n*Ts);
@@ -36,25 +37,29 @@ x_2 = sin(-2*pi*Fc_2*n*Ts);
 
 
 %% Figures
+
+# Scale the time vector to convert seconds to ms
+t = t*1e3;
+
 figure
 subplot(3,1,1)
-    plot(n*Ts, x_0)
+    plot(t, x_0)
     grid on
     legend('x0')
     title('Segnale x_0')
-    xlabel('Time [nT_s]')
+    xlabel('Time [ms]')
     ylabel('Amplitude')
 subplot(3,1,2)
-    plot(n*Ts, x_1)
+    plot(t, x_1)
     grid on
     legend('x1')
     title('Segnale x_1')
-    xlabel('Time [nT_s]')
+    xlabel('Time [ms]')
     ylabel('Amplitude')
 subplot(3,1,3)
-    plot(n*Ts, x_2)
+    plot(t, x_2)
     grid on
     legend('x2')
     title('Segnale x_2')
-    xlabel('Time [nT_s]')
+    xlabel('Time [ms]')
     ylabel('Amplitude')
