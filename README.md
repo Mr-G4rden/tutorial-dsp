@@ -11,5 +11,5 @@ Good work and good code!
 
 ## Index
 
-[00 - Generation of discrete signals](https://github.com/Mr-G4rden/tutorial-dsp/)
+[00 - Generation of discrete signals](https://github.com/Mr-G4rden/tutorial-dsp/tree/main/00%20-%20Generation%20of%20discrete%20signals)
 

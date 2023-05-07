@@ -1,8 +1,7 @@
 %% TARGET
 % Use Simulink to generate 1 continuous sine wave affected by random noise
-% and create an ADC to sample it.% The sine wave is:
+% and create an ADC to sample it. The sine wave is:
 % * Sine Wave 0: x_0(t)=sin(2*pi*Fc_0*t + phi_0);
-% * Sine Wave 1: x_1(t)=sin(2*pi*Fc_1*t + phi_1);
 % 
 % The parameters are:
 % * Fc_0  = 0.5 [kHz];
