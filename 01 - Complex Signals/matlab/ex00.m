@@ -1,5 +1,5 @@
 %% TARGET
-% Plot the two complex exponential signals represented in the 
+% Plot the two complex signals represented in the 
 % discrete time domain. The signals are:
 % * Signal 0: y[n]=exp(+1i*omegaN*n);
 % * Signal 1: w[n]=exp(-1i*omegaN*n);

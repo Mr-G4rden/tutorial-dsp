@@ -1,6 +1,6 @@
 %% TARGET
 % Use Simulink to generate the signal y[n]:
-% * Output Signal: y[n] = x[n]*a1 + x[n-1]*a2 + x[n-2]*a3 + x[n-3]*a4
+% * Output Signal: y[n] = a1*x[n] + a2*x[n-1] + a3*x[n-2] + a4*x[n-3]
 % * Input  Signal: x[n] = exp(1i*2*pi*Fc_0*Ts*n) + exp(1i*2*pi*Fc_1*Ts*n);
 %
 % The parameters are:

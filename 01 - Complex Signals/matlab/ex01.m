@@ -1,5 +1,6 @@
 %% TARGET
-% Perform the upsample and downsample processes of the discrete complex wave and draw them. The signal is
+% Perform the upsample and downsample processes of the discrete complex
+% wave and draw them. The signal are
 % * Signal 0: x[n]   = exp(1i*omegaN*n); omegaN = 1/16;
 % * Signal 1: x_u[n] = upsample(x, L);   L = 2;
 % * Signal 2: x_d[n] = downsample(x, M); M = 2;
