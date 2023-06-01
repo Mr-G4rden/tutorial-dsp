@@ -21,9 +21,11 @@ len = 64;
 n = 0:len-1;
 x = exp(1i*omegaN*n);
 
+% Upsampled signal
 x_u = upsample(x,L);
 n_u = 0:(length(x_u)-1);
 
+% Downsampled signal
 x_d = downsample(x,M);
 n_d = 0:(length(x_d)-1);
 

@@ -1,5 +1,5 @@
 %% TARGET
-% Implement a 'Factor-of-2 interpolator' using Simulink :
+% Implement a 'Factor-of-2 interpolator' using Simulink:
 % * Input  Signal: x[n] = cos(2*pi*F_N*n);
 %
 % The parameters are:

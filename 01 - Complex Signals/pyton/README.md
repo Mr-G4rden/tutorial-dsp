@@ -1,6 +1,6 @@
-# Matlab
+# Python
 
-- [Matlab](#matlab)
+- [Python](#python)
   - [Exercise 0](#exercise-0)
     - [Suggestions](#suggestions)
   - [Exercise 1](#exercise-1)
@@ -19,15 +19,8 @@ Plot the two complex signals represented in the discrete time domain. The signal
 
     ```matlab
     % c=a+jb is the complex signal
-    a = real(c); % Real component
-    b = imag(c); % Imag component
-    ```
-
-2. How to create a complex signal given its components
-
-    ```matlab
-    % c=a+jb is the complex signal
-    c = complex(a,b);
+    a = np.real(c); % Real component
+    b = np.imag(c); % Imag component
     ```
 
 ## Exercise 1
@@ -41,7 +34,7 @@ wave and draw them. The signal are:
 
 ## Exercise 2
 
-Use Simulink to generate the following signals:
+Generate the following signals:
 
 - $x[n]=e^{+i \\, 2\pi \\, Fc_0 \\, T_s \\, n} + e^{+i \\, 2\pi \\, Fc_1 \\, T_s \\, n}$
 - $y[n]= a_1 \\, x[n] + a_2 \\, x[n-1] + a_3 \\, x[n-2] + a_4 \\, x[n-3]$
