@@ -7,6 +7,11 @@
 % * Fs  = 16 [kHz];
 % * F_N =  Fc/Fs;
 %
+% *Suggestions*
+% 1. The equation of the Factor-of-2 interpolator is: 
+%      y[n] = x_u[n] + 0.5*(x_u[n+1] + x_u[n-1])
+%    where x_u[n] is obtained by the oversampling of x
+% 
 % *Simulink Configuration - Solver*
 % Modeling tab --> Model Settings --> Solver section (on the left)
 %  (a) Change the 'type' from 'Variable-Step' to 'Fixed-Step'.

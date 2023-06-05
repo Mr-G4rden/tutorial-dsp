@@ -8,9 +8,9 @@
 # * a2 = -1
 # * a3 = 0.5
 # * a4 = -1
-# * Fc_0 =  1 [kHz];
-# * Fc_1 =  4 [kHz];
-# * Fs   = 16 [kHz];
+# * Fc_0 =  1 [kHz] 
+# * Fc_1 =  4 [kHz] 
+# * Fs   = 16 [kHz] 
 
 ## Import libraries
 import numpy as np
@@ -18,18 +18,18 @@ import matplotlib.pyplot as plt
 
 ## Parameters
 # System parameters
-a1 =  0.5;
-a2 = -1.0;
-a3 =  0.5;
-a4 = -1.0;
+a1 =  0.5 
+a2 = -1.0 
+a3 =  0.5 
+a4 = -1.0 
 
 # Complex wave frequencies
-Fc_0 =  1e3;
-Fc_1 =  4e3;
+Fc_0 =  1e3 
+Fc_1 =  4e3 
 
 # Sampling frequency and period
-Fs = 16e3;
-Ts = 1.0/Fs;
+Fs = 16e3 
+Ts = 1.0/Fs 
 len = 64
 
 ## Exercise

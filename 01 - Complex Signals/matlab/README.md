@@ -17,18 +17,18 @@ Plot the two complex signals represented in the discrete time domain. The signal
 
 1. How to extract the **real** and **imag** components from a complex signal
 
-```matlab
-% c=a+jb is the complex signal
-a = real(c); % Real component
-b = imag(c); % Imag component
-```
+    ```matlab
+    % c=a+jb is the complex signal
+    a = real(c); % Real component
+    b = imag(c); % Imag component
+    ```
 
 2. How to create a complex signal given its components
 
-```matlab
-% c=a+jb is the complex signal
-c = complex(a,b);
-```
+    ```matlab
+    % c=a+jb is the complex signal
+    c = complex(a,b);
+    ```
 
 ## Exercise 1
 

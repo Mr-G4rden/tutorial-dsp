@@ -17,11 +17,11 @@ Plot the two complex signals represented in the discrete time domain. The signal
 
 1. How to extract the **real** and **imag** components from a complex signal
 
-  ```python
-  # c=a+jb is the complex signal
-  a = np.real(c); % Real component
-  b = np.imag(c); % Imag component
-  ```
+    ```python
+    # c=a+jb is the complex signal
+    a = np.real(c); % Real component
+    b = np.imag(c); % Imag component
+    ```
 
 ## Exercise 1
 
