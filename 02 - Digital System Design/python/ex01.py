@@ -38,6 +38,13 @@ x_u[::L] = x
 #           = convolution of [0.5, 1.0, 0.5] and x_u
 h = np.array([0.5, 1.0, 0.5])
 y = np.convolve(h, x_u)
+
+# To avoid the convolution, we can write the following code
+y = np.zeros(L*len, dtype='float')
+for i in range(1,np.size(x_u)-1):
+  y[i] = x_u[i] + 0.5 * (x_u[i+1] + x_u[i-1])
+
+# Index vector of y
 ny = np.linspace(0, np.size(y)-1, np.size(y))
 
 ## Figures

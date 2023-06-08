@@ -28,8 +28,8 @@ y = np.zeros(len, dtype='float')
 
 # For loop to implement the discrete time integrator.
 # It stats from 1 to len.
-for n in range(1,len):
-  y[n] = y[n-1] + (Ts/2) * (x[n] + x[n-1]);
+for i in range(1,len):
+  y[i] = y[i-1] + (Ts/2) * (x[i] + x[i-1])
 
 ## Figures
 
