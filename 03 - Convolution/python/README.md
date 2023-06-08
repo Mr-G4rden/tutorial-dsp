@@ -12,8 +12,7 @@
 Perform the convolution between $x[n]$ and $h[n]$. Use `freqz` and `plot` to see the results. The signal are:
 
 - $x[n] = cos(2 \\, \pi \\, F_{c0} \\, n) + cos(2 \\, \pi \\, F_{c1} \\, n)$
-- $h = y[n−1] + (Ts/2) \cdot (x[n] + x[n−1])$  
-  For the signal h[n], I'll give you the samples
+- For the signal h[n], I'll give you the samples
 
     ```python
     h = [-0.0013, -0.0054, -0.0124, ...
