@@ -1,4 +1,4 @@
-%% One chirp, one sine wave
+%% Example: One chirp, one sine wave
 % In this first section, I'll show you the spectrogram of a linear chirp
 % and a sine wave
 
@@ -43,8 +43,9 @@ ylabel('Amplitude')
 title('Chirp Wave')
 
 
-%% Autocorrelation
-% In this second section, I'll show you the autocorrelation of a linear chirp and a sine wave
+%% Example: Autocorrelation
+% In this second section, I'll show you the autocorrelation of a linear
+% chirp and a sine wave.
 
 % Close the previous figures
 close all;

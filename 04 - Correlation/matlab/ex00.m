@@ -1,7 +1,7 @@
 %% TARGET
 % Perform the cross-correlation between s[n] and x[n] using Matlab
 % * x[n] = sin(2*pi*Fc*n*Ts);
-% * w[n] = 0.1*randn(...);
+% * w[n] = 0.25*randn(...);
 % * s[n] = x[n-100] + w[n];
 % 
 % The parameters are:
@@ -10,7 +10,8 @@
 %
 % *Suggestions*
 %   1) The cross-correlation function is:
-%      r_xy = xcorr(x,y);
+%      r_xy        = xcorr(x,y);
+%      [r_xy, lag] = xcorr(x,y);
 %
 
 %% Clear everything
@@ -30,7 +31,7 @@ ns = 0:(len+100)-1;
 % Signal
 x = sin(2*pi*(Fc/Fs)*n);
 s = [zeros(1,100), x];
-s = s + 0.5 * randn(1, length(s));
+s = s + 0.25 * randn(1, length(s));
 
 % Cross-correlation
 r1 = xcorr(x,s);
@@ -59,14 +60,3 @@ subplot(3,1,3)
     legend('r_2')
     xlabel('Lag')
     xlabel('Amplitude')
-
-
-
-
-
-
-
-
-
-
- 

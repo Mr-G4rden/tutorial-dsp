@@ -9,17 +9,11 @@
 % * Fc = Fs/16
 %
 % *Suggestions*
-% Simulink Block to implement a gaussian noise
-%  Step 1. Select the 'Random Source' block.
+% How to implement a Gaussian noise
+%  Step 1. Select the 'Random Source' block from the DSP System Toolbox.
 %  Step 2. Open the configuration panel of the block.
-%  Step 3. 'Source Type' --> 'Gaussian '
-%  Step 4. Mean = 0;  Variance=0.25
-%
-% TARGET: implement the cross-correlation between s[n] and x[n] using Simulink
-% s[n] = x[n-n0] + w[n];
-% Fs = 1 [MHz]; Fc = Fs/16; 
-% w[n] = 0.5*randn(1,length(x));
-% x[n] = sin(2*pi*Fc*n*Ts);
+%  Step 3. 'Source Type' --> 'Gaussian'
+%  Step 4. Mean = 0;  Variance=0.1
 %
 
 %% Clear everything
