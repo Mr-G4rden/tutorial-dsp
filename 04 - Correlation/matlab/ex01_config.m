@@ -1,7 +1,7 @@
 %% TARGET
 % Perform the cross-correlation between s[n] and x[n] using Simulink
 % * x[n] = sin(2*pi*Fc*n*Ts);
-% * w[n] = 0.1*randn(...);
+% * w[n] is a Gaussian noise;
 % * s[n] = x[n-n0] + w[n];
 % 
 % The parameters are:

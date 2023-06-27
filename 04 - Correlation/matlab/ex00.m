@@ -21,6 +21,7 @@ close all;  % 'close all' deletes all figures whose handles are not hidden.
 
 %% Parameters
 Fs = 1e6;
+Ts = 1/Fs;
 Fc = Fs/16;
 len = 100;
 
@@ -29,13 +30,13 @@ n = 0:len-1;
 ns = 0:(len+100)-1;
 
 % Signal
-x = sin(2*pi*(Fc/Fs)*n);
+x = sin(2*pi*Fc*n*Ts);
 s = [zeros(1,100), x];
 s = s + 0.25 * randn(1, length(s));
 
 % Cross-correlation
-r1 = xcorr(x,s);
-[r2, lag] = xcorr(s,x);
+[r1, lag1] = xcorr(x,s);
+[r2, lag2] = xcorr(s,x);
 
 %% Figure
 figure
@@ -45,17 +46,17 @@ subplot(3,1,1)
     plot(ns,s)
     hold off
     grid on
-    legend('x','s')
+    legend('x delayed','s')
     xlabel('Samples')
     xlabel('Amplitude')
 subplot(3,1,2)
-    plot(r1)
+    plot(lag1, r1)
     grid on
     legend('r_1')
     xlabel('Samples')
     xlabel('Amplitude')
 subplot(3,1,3)
-    plot(lag,r2)
+    plot(lag2,r2)
     grid on
     legend('r_2')
     xlabel('Lag')
