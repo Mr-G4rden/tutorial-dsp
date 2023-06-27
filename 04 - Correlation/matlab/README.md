@@ -33,7 +33,7 @@ Perform the cross-correlation between s[n] and x[n] using the convolution with S
 **Signals**
 
 - $x[n] = sin(2 \\, \pi \\, F_c \\, n \\, T_s)$
-- $w[n] \mathrm{is a Gaussian noise}$
+- $w[n] \mathrm{is \, a \, Gaussian \, noise}$
 - $s[n] = x[n-n_0] + w[n]$
 
 **Suggestions**
