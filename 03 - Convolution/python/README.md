@@ -25,7 +25,7 @@ Perform the convolution between $x[n]$ and $h[n]$. Use `freqz` and `plot` to see
 
 ## Exercise 1
 
-Implement a _moving-average system_ using Matlab to clean the signal
+Implement a _moving-average system_ to clean the signal
 distorted by the noise. The signal is saved in the text file 'data.txt',
 and the sampling frequency is 10 [Hz].
 The equation of the _moving-average system_ is represented by the equation shown in 'ex01_eqn1.png':

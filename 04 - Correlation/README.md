@@ -1,7 +1,7 @@
 Correlation
 ===
 
-These exercises show some cases where convolution can be used.
+These exercises show some cases where correlation can be used.
 
 # Exercises
 

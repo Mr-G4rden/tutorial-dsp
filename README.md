@@ -34,7 +34,7 @@ Typically, I write a configuration file to define the variables used for the sim
 - [02 - Digital System Design](02%20-%20Digital%20System%20Design/)
 - [03 - Convolution](03%20-%20Convolution/)
 - [04 - Correlation](04%20-%20Correlation/)
-- [05 - FFT](05%20-%20FFT/)
+- [05 - Fast Fourier Transform (FFT)](05%20-%20FFT/)
 - [06 - Digital Filters Design](06%20-%20Digital%20Filters%20Design/)
 - [07 - Multirate Digital Filtering](07%20-%20Multirate%20Digital%20Filtering/)
 - [08 - Frequency Domain Filtering](08%20-%20Frequency%20Domain%20Filtering/)
