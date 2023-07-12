@@ -36,11 +36,11 @@ Don't use the _sinc_ matlab function. Compute the sinc manually and pay attentio
 
 Let's consider the continuous sinc function:
 
-$x(t) = \frac{sin(2 \\, \pi \\, F_c \\, t)}{2 \\, \pi \\, F_c \\, t}
+$x(t) = \frac{sin(2 \\, \pi \\, F_c \\, t)}{2 \\, \pi \\, F_c \\, t}$
 
 The discretizazion can be obtained with $t=nT_s$
 
-$x[n] = \frac{sin(2 \\, \pi \\, F_N \\, n)}{2 \\, \pi \\, F_N \\, n}
+$x[n] = \frac{sin(2 \\, \pi \\, F_N \\, n)}{2 \\, \pi \\, F_N \\, n}$
 
 where $F_N = \frac{F_c}{F_s}$ is the normalized frequency.
 
