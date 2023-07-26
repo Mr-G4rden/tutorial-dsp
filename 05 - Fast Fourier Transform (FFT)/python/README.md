@@ -1,10 +1,11 @@
-# Matlab
+# Python
 
-- [Matlab](#matlab)
+- [Python](#python)
   - [Exercise 0](#exercise-0)
   - [Exercise 1](#exercise-1)
     - [Discretization of the sinc function](#discretization-of-the-sinc-function)
   - [Exercise 2](#exercise-2)
+    - [Section 1](#section-1)
 
 ## Exercise 0
 
@@ -23,7 +24,7 @@ Gaussian noise is created by changing its amplitude.
 **Suggestions**
 
 It's important to know the theory of the FFT and how it is implemented.
-* [Mathworks documentation of the FFT function](https://it.mathworks.com/help/matlab/ref/fft.html)
+* [Numpy documentation of the FFT function](https://numpy.org/doc/stable/reference/generated/numpy.fft.fft.html)
 * [Interesting link on FFT](https://it.mathworks.com/discovery/fft.html)
 
 ## Exercise 1
@@ -48,6 +49,10 @@ where $F_N = \frac{F_c}{F_s}$ is the normalized frequency.
 When you compute the sinc output, you must compensate the NaN value introduced by the ratio $\frac{0}{0}$.
 
 ## Exercise 2
+
+This exercise consists of 2 sections:
+
+### Section 1
 
 Plot the frequency response of the signal $x[n]$ using the N-FFT function for different N values.
 

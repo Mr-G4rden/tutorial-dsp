@@ -1,7 +1,13 @@
-%% FFT Examples - Gibbs phenomenon
+%% TARGET
 % Plot the frequency response of the sinc signal by using the FFT function.
+%
+% The sinc signal must be designed considering several lengths to analyze
+% the [Gibbs phenomenon](https://en.wikipedia.org/wiki/Gibbs_phenomenon).
+% Don't use the _sinc_ matlab function. Compute the sinc manually and pay
+% attention to the ratio 0/0.
 % 
 % The parameters are:
+% x_i[n] = sin(2*pi*F_n*n) where i=[0,2]
 % * Length of n = [17, 65, 257]
 % * T_s =   1 [ms]
 % * F_c = 250 [Hz]
@@ -39,9 +45,9 @@ x2(isnan(x2)) = 1;
 
 %% Figure
 nFFT = 2^10;
-Xf_0 = fft(x0,nFFT)/nFFT;
-Xf_1 = fft(x1,nFFT)/nFFT;
-Xf_2 = fft(x2,nFFT)/nFFT;
+Xf_0 = fft(x0,nFFT);
+Xf_1 = fft(x1,nFFT);
+Xf_2 = fft(x2,nFFT);
 
 Xf_0 = abs(Xf_0);
 Xf_1 = abs(Xf_1);

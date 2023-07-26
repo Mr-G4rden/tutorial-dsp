@@ -1,5 +1,6 @@
-%% FFT Examples - Change the length of the FFT
-% Plot the frequency representation of the signal using the N-FFT function for different N values.
+%% Target
+% Plot the frequency representation of the signal
+% using the N-FFT function for different N values.
 % 
 % The parameters are:
 % * x[n] = cos(2*pi*F0*n*Ts) + cos(2*pi*F1*n*Ts)

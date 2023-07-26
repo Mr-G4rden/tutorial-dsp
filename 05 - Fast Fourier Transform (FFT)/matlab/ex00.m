@@ -1,11 +1,12 @@
-%% FFT Examples - Noisy signal
+%% TARGET
 % Plot the frequency response of the signal $x[n]$ by using the FFT
 % function.
 % 
 % The parameters are:
-% * F_0 = 1 [kHz]
-% * F_s = 16 [kHz];
-% * k=[1e-8, 1e-6, 1e-4, 1e-2, 1e-1];
+% * x[n] = cos(2*pi*Fc*n*Ts) + k*w[n]
+% * F_0 =  1 [kHz]
+% * F_s = 16 [kHz]
+% * k=[1e-8, 1e-6, 1e-4, 1e-2, 1e-1]
 %
 % *Suggestions*
 %   1) FFT Function (https://it.mathworks.com/help/matlab/ref/fft.html)
@@ -57,7 +58,6 @@ Xf_abs_dB = mag2db(Xf_abs);
 
 % Frequency vector for the plot
 f_ax = (0:len-1)/len * Fs;
-f_ax = f_ax.';
 
 figure
 plot(f_ax, Xf_abs_dB)
