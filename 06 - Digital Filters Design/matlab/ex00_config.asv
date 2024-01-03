@@ -42,12 +42,12 @@ F_s = 16e3;
 T_s = 1/F_s;
 
 %% Exercise
-len = 2^12;
+len = 2^14;
 n = 0:len-1;
 
 % Signals
-w_0 = 1e-2 * complex(randn(1,len), randn(1,len));
-w_1 = 1e-2 * complex(randn(1,len), randn(1,len));
+w_0 = complex(randn(1,len), randn(1,len));
+w_1 = complex(randn(1,len), randn(1,len));
 x_0 = exp(1i * 2 * pi * F_0 * T_s * n) + w_0;
 x_1 = exp(1i * 2 * pi * F_1 * T_s * n) + w_1;
 
@@ -79,12 +79,12 @@ Yf0_iir = freqz(y_0_iir, 1, nFFT);
 w = w/pi;
 
 % Mag to dB
-Hf_fir  = mag2db(abs(Hf_fir));
-Hf_iir  = mag2db(abs(Hf_iir));
-Yf0_fir = mag2db(abs(Yf0_fir)/nFFT);
-Yf0_iir = mag2db(abs(Yf0_iir)/nFFT);
-Yf1_fir = mag2db(abs(Yf1_fir)/nFFT);
-Yf1_iir = mag2db(abs(Yf1_iir)/nFFT);
+Hf_fir 
+Hf_iir  = mag2db(abs());
+Yf0_fir = mag2db(abs());
+Yf0_iir = mag2db(abs());
+Yf1_fir = mag2db(abs());
+Yf1_iir = mag2db(abs());
 
 figure;
 subplot(3,1,1)
@@ -102,7 +102,7 @@ subplot(3,1,2)
   plot(w, Yf0_iir)
   hold off
   grid on
-  legend('Yf_0 - FIR','Yf_0 - IIR')
+  legend('Yf_0 - {FIR}','Yf_0 - {IIR}')
   xlabel('Normalized Frequency \times \pi')
   ylabel('Amplitude [dB]')
 subplot(3,1,3)
@@ -111,9 +111,10 @@ subplot(3,1,3)
   plot(w, Yf1_iir)
   hold off
   grid on
-  legend('Yf_1 - FIR','Yf_1 - IIR')
+  legend('Yf_0 - {FIR}','Yf_0 - {IIR}')
   xlabel('Normalized Frequency \times \pi')
   ylabel('Amplitude [dB]')
+
 
 % Using 'fvtool'
 hfvt0 = fvtool(fir_num, 1, iir_num, iir_den, ...
