@@ -33,10 +33,10 @@ Xf_1 = np.fft.fft(x, N[1])/np.size(x)
 Xf_2 = np.fft.fft(x, N[2])/np.size(x)
 Xf_3 = np.fft.fft(x, N[3])/np.size(x)
 
-Xf_0 = abs(Xf_0)
-Xf_1 = abs(Xf_1)
-Xf_2 = abs(Xf_2)
-Xf_3 = abs(Xf_3)
+Xf_0 = np.abs(Xf_0)
+Xf_1 = np.abs(Xf_1)
+Xf_2 = np.abs(Xf_2)
+Xf_3 = np.abs(Xf_3)
 
 f_ax_0 = np.arange(start=-np.size(Xf_0)/2, 
                    stop=np.size(Xf_0)/2, 

@@ -1,15 +1,16 @@
-%% Target
-%  1. Use Matlab to analyze frequency responses of the FIR and IIR filters.
-%  2. Use Matlab to analyze the outputs of a FIR and a IIR filter.
-%  3. Use Simulink to analyze the outputs of a FIR and a IIR filter.
+%% TARGET
+% Generate and analyze the frequency responses of the FIR and IIR filters
+% whose parameters are given as follows. Next, FIR and IIR filters have to
+% be used to filter 2 different signals that have to be analyzed in the
+% frequency domain.
 % 
 % The parameters are:
 %
-% * x_0[n] = exp(j 2 \pi F_0 T_s n} + w_0[n]
-% * x_1[n] = exp(j 2 \pi F_1 T_s n} + w_1[n]
-% * F_0 =  1 [kHz]
-% * F_1 =  2 [kHz]
-% * F_s = 16 [kHz];
+% * x0[n] = exp(j 2 \pi F0 Ts n} + w0[n]
+% * x1[n] = exp(j 2 \pi F1 Ts n} + w1[n]
+% * F0 =  1 [kHz]
+% * F1 =  2 [kHz]
+% * Fs = 16 [kHz];
 % 
 % *Suggestions*
 % 
@@ -36,20 +37,20 @@ close all;      % Close all figures
 
 
 %% Parameters
-F_0 =  1e3;
-F_1 =  2e3;
-F_s = 16e3;
-T_s = 1/F_s;
+F0 =  1e3;
+F1 =  2e3;
+Fs = 16e3;
+Ts = 1/Fs;
 
 %% Exercise
 len = 2^12;
 n = 0:len-1;
 
 % Signals
-w_0 = 1e-2 * complex(randn(1,len), randn(1,len));
-w_1 = 1e-2 * complex(randn(1,len), randn(1,len));
-x_0 = exp(1i * 2 * pi * F_0 * T_s * n) + w_0;
-x_1 = exp(1i * 2 * pi * F_1 * T_s * n) + w_1;
+w0 = 1e-2 * complex(randn(1,len), randn(1,len));
+w1 = 1e-2 * complex(randn(1,len), randn(1,len));
+x0 = exp(1i * 2 * pi * F0 * Ts * n) + w0;
+x1 = exp(1i * 2 * pi * F1 * Ts * n) + w1;
 
 % FIR Filter
 fir_ord = 64; Wn = 5e3 / 8e3;
@@ -60,27 +61,27 @@ iir_ord = 12; Rp = 0.01; Wn = 5e3 / 8e3;
 [iir_num, iir_den] = cheby1(iir_ord,Rp,Wn);
 
 % Filtering
-y_0_fir = filter(fir_num,1,x_0);
-y_1_fir = filter(fir_num,1,x_1);
-y_0_iir = filter(iir_num,iir_den,x_0);
-y_1_iir = filter(iir_num,iir_den,x_1);
+y0_fir = filter(fir_num,1,x0);
+y1_fir = filter(fir_num,1,x1);
+y0_iir = filter(iir_num,iir_den,x0);
+y1_iir = filter(iir_num,iir_den,x1);
 
 %% Plot
 % Using 'freqz'
 nFFT = 2^12; % Number of points of the fft
-Hf_fir = freqz(fir_num, 1, nFFT);
-Hf_iir = freqz(iir_num, iir_num, nFFT);
-Yf0_fir = freqz(y_0_fir, 1, nFFT);
-Yf1_fir = freqz(y_1_fir, 1, nFFT);
-Yf0_iir = freqz(y_0_iir, 1, nFFT);
-[Yf1_iir, w] = freqz(y_1_iir, 1, nFFT);
+HFfir = freqz(fir_num, 1, nFFT);
+HFiir = freqz(iir_num, iir_num, nFFT);
+Yf0_fir = freqz(y0_fir, 1, nFFT);
+Yf1_fir = freqz(y1_fir, 1, nFFT);
+Yf0_iir = freqz(y0_iir, 1, nFFT);
+[Yf1_iir, w] = freqz(y1_iir, 1, nFFT);
 
 % Frequency normalization
 w = w/pi;
 
 % Mag to dB
-Hf_fir  = mag2db(abs(Hf_fir));
-Hf_iir  = mag2db(abs(Hf_iir));
+HFfir  = mag2db(abs(HFfir));
+HFiir  = mag2db(abs(HFiir));
 Yf0_fir = mag2db(abs(Yf0_fir)/nFFT);
 Yf0_iir = mag2db(abs(Yf0_iir)/nFFT);
 Yf1_fir = mag2db(abs(Yf1_fir)/nFFT);
@@ -89,8 +90,8 @@ Yf1_iir = mag2db(abs(Yf1_iir)/nFFT);
 figure;
 subplot(3,1,1)
   hold on
-  plot(w, Hf_fir)
-  plot(w, Hf_iir)
+  plot(w, HFfir)
+  plot(w, HFiir)
   hold off
   grid on
   legend('H_{FIR}','H_{IIR}')
@@ -102,7 +103,7 @@ subplot(3,1,2)
   plot(w, Yf0_iir)
   hold off
   grid on
-  legend('Yf_0 - FIR','Yf_0 - IIR')
+  legend('YF0 - FIR','YF0 - IIR')
   xlabel('Normalized Frequency \times \pi')
   ylabel('Amplitude [dB]')
 subplot(3,1,3)
@@ -111,22 +112,22 @@ subplot(3,1,3)
   plot(w, Yf1_iir)
   hold off
   grid on
-  legend('Yf_1 - FIR','Yf_1 - IIR')
+  legend('YF1 - FIR','YF1 - IIR')
   xlabel('Normalized Frequency \times \pi')
   ylabel('Amplitude [dB]')
 
 % Using 'fvtool'
 hfvt0 = fvtool(fir_num, 1, iir_num, iir_den, ...
-               'Fs', F_s, 'NumberOfPoints', nFFT);
+               'Fs', Fs, 'NumberOfPoints', nFFT);
 legend(hfvt0, 'FIR','IIR')
 
 
-hfvt1 = fvtool(y_0_fir, 1, y_0_iir, 1, ...
-               'Fs', F_s, 'NumberOfPoints', nFFT);
-legend(hfvt1, 'y_0 - FIR','y_0 - IIR')
+hfvt1 = fvtool(y0_fir, 1, y0_iir, 1, ...
+               'Fs', Fs, 'NumberOfPoints', nFFT);
+legend(hfvt1, 'y0 - FIR','y0 - IIR')
 
 
-hfvt2 = fvtool(y_1_fir, 1, y_1_iir, 1, ...
-               'Fs', F_s, 'NumberOfPoints', nFFT);
-legend(hfvt2, 'y_1 - FIR','y_1 - IIR')
+hfvt2 = fvtool(y1_fir, 1, y1_iir, 1, ...
+               'Fs', Fs, 'NumberOfPoints', nFFT);
+legend(hfvt2, 'y1 - FIR','y1 - IIR')
 
