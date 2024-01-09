@@ -69,8 +69,8 @@ y1_iir = filter(iir_num,iir_den,x1);
 %% Plot
 % Using 'freqz'
 nFFT = 2^12; % Number of points of the fft
-HFfir = freqz(fir_num, 1, nFFT);
-HFiir = freqz(iir_num, iir_num, nFFT);
+Hf_fir = freqz(fir_num, 1, nFFT);
+Hf_iir = freqz(iir_num, iir_den, nFFT);
 Yf0_fir = freqz(y0_fir, 1, nFFT);
 Yf1_fir = freqz(y1_fir, 1, nFFT);
 Yf0_iir = freqz(y0_iir, 1, nFFT);
@@ -80,8 +80,8 @@ Yf0_iir = freqz(y0_iir, 1, nFFT);
 w = w/pi;
 
 % Mag to dB
-HFfir  = mag2db(abs(HFfir));
-HFiir  = mag2db(abs(HFiir));
+Hf_fir  = mag2db(abs(Hf_fir));
+Hf_iir  = mag2db(abs(Hf_iir));
 Yf0_fir = mag2db(abs(Yf0_fir)/nFFT);
 Yf0_iir = mag2db(abs(Yf0_iir)/nFFT);
 Yf1_fir = mag2db(abs(Yf1_fir)/nFFT);
@@ -90,8 +90,8 @@ Yf1_iir = mag2db(abs(Yf1_iir)/nFFT);
 figure;
 subplot(3,1,1)
   hold on
-  plot(w, HFfir)
-  plot(w, HFiir)
+  plot(w, Hf_fir)
+  plot(w, Hf_iir)
   hold off
   grid on
   legend('H_{FIR}','H_{IIR}')
