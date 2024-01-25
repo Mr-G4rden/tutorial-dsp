@@ -56,9 +56,13 @@ nu = 0:length(xu)-1;
 
 % Interpolation
 y = L*filter(fir_num, 1, xu);
-ny = 0:length(y)-1;
+
+% Remove the filter latency
+y(1:fir_ord/2) = [];          
+y(end-fir_ord/2:end) = [];
 
 % Time vectors
+ny = 0:length(y)-1;
 tx  = n*Ts / 1e6;
 txu = nu*(Ts/L) / 1e6;
 ty  = ny*(Ts/L) / 1e6;

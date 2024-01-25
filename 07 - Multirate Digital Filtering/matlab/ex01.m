@@ -52,6 +52,8 @@ fir_num = fir1(fir_ord, Wn, hann(fir_ord+1));
 
 % Filtering
 xd = filter(fir_num, 1, x);
+xd(1:fir_ord/2) = [];         % Remove the filter latency
+
 nd = 0:length(xd)-1;
 
 % Interpolation
@@ -107,7 +109,7 @@ subplot(3,1,3)
   plot(ty ,  y, 'x-')
   hold off
   grid on
-  legend('x','x_u','y')
+  legend('x','x_d','y')
   xlabel('Time \mus')
   ylabel('Amplitude')
 

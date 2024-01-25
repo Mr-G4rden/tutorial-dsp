@@ -55,6 +55,7 @@ nu = 0:length(xu)-1;
 
 % Interpolation
 y = L*filter(fir_num, 1, xu);
+y(1:fir_ord/2) = [];          % Remove the filter latency
 
 % Downsampler
 y = downsample(y,M);
