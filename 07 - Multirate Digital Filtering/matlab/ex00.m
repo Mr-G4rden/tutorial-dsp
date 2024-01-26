@@ -63,9 +63,9 @@ y(end-fir_ord/2:end) = [];
 
 % Time vectors
 ny = 0:length(y)-1;
-tx  = n*Ts / 1e6;
-txu = nu*(Ts/L) / 1e6;
-ty  = ny*(Ts/L) / 1e6;
+tx  = n*Ts * 1e6;
+txu = nu*(Ts/L) * 1e6;
+ty  = ny*(Ts/L) * 1e6;
 
 %% Plot
 % Using 'freqz'

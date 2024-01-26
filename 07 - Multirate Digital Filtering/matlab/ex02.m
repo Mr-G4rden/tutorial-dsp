@@ -62,8 +62,8 @@ y = downsample(y,M);
 ny = 0:length(y)-1;
 
 % Time vectors
-tx  = n*Ts / 1e6;
-ty  = ny*(Ts/L*M) / 1e6;
+tx  = n*Ts * 1e6;
+ty  = ny*(Ts/L*M) * 1e6;
 
 %% Plot
 % Using 'freqz'

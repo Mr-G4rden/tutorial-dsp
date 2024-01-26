@@ -53,17 +53,16 @@ fir_num = fir1(fir_ord, Wn, hann(fir_ord+1));
 % Filtering
 xd = filter(fir_num, 1, x);
 xd(1:fir_ord/2) = [];         % Remove the filter latency
-
 nd = 0:length(xd)-1;
 
-% Interpolation
+% Downsampling
 y = downsample(xd,M);
 ny = 0:length(y)-1;
 
 % Time vectors
-tx  = n*Ts  / 1e6;
-txd = nd*Ts / 1e6;
-ty  = ny*(Ts*M) / 1e6;
+tx  = n*Ts  * 1e6;
+txd = nd*Ts * 1e6;
+ty  = ny*(Ts*M) * 1e6;
 
 %% Plot
 % Using 'freqz'
