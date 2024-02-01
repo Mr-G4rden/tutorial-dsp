@@ -43,13 +43,17 @@ fir_num = signal.firwin(numtaps=fir_len,
                         cutoff=Wn, 
                         window='hann')
 
-# Upsample
+# Upsample (method 1)
 # This function is not present in the scipy lib. It is implemented using a 'for'.
 i = 0
 xu = np.zeros(L*len, dtype='float')
 for i in range(0,len):
   xu[L*i] = x[i]
 nu = np.arange(start=0, stop=np.size(xu), dtype=int)
+
+# Upsample (method 2)
+# xu = np.zeros(L*len, dtype='float')
+# xu[::L] = x
 
 # Interpolation
 y = signal.lfilter(b=fir_num, a=1, x=xu)
