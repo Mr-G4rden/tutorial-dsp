@@ -43,34 +43,34 @@ y_L = conv(x,h);
 % samples and a zero-filled vector. In this example, N=64 and a FFT input
 % vector is composed of N/2 samples of the signal and N/2 zeros.
 
-% Buffer del segnale di lunghezza N_fft/2
+% Signal buffering of length N_fft/2
 x_b = buffer(x,N/2);
 
-% Buffer di zeri
+% Zero padding
 zero_b = zeros(size(x_b));
 
-% Buffer del segnale
+% Concatenation
 x_b = [x_b; zero_b];
 
-% Trasformata del segnale
+% FFT performed to each column
 X_b_f = fft(x_b,N);
 
-% Buffer del filtro di lunghezza N_fft/2
-h_b = [h.', zeros(1,N/2)];
-
-% Trasformata del filtro
-H_f = fft(h_b,N);
+% FFT of the filter
+% If the FFT length is larger than the length of the vector,
+% the input vector is padded with zeros
+H_f = fft(h,N);
 
 %% Product in the frequecy domain and IFFT
 
 % Product
 Y_f = zeros(size(X_b_f));
 for i=1:size(Y_f,2)
-  Y_f(:,i) = X_b_f(:,i).*(H_f.');
+  Y_f(:,i) = X_b_f(:,i).*(H_f);
 end
 
-% IDFT
+% IFFT
 y_b = ifft(Y_f,N);
+y_b = real(y_b);
 
 %% Post IFFT processing
 % Since N/2 zeros have been added, the IFFT output sequences must be added
@@ -95,7 +95,7 @@ Yf_L    = freqz(y_L, length(y_L), nFFT);
 [Yf, w] = freqz(y, length(y), nFFT);
 
 % Frequency normalization
-w = w/pi * (Fs/2)/1e3;
+w = w/pi * (Fs/2);
 
 % Mag to dB
 Xf     = mag2db(abs(Xf)/nFFT);
@@ -111,7 +111,7 @@ plot(w, Yf,   'x-')
 hold off
 grid on
 legend({'x','Linear Convolution', 'Overlap-Add'})
-xlabel('Frequency [MHz]')
+xlabel('Frequency [Hz]')
 ylabel('Amplitude [dB]')
 
 % Error between the Linear convolution and the frequency filtering

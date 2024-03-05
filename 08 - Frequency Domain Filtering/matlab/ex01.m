@@ -50,8 +50,8 @@ x_b = buffer(x,N,N/2);
 % Zero-Padding
 h_b = [h; zeros(N-M,1)];
 
-% DFT
-H_f  = fft(h_b,N);
+% FFT
+H_f   = fft(h_b,N);
 X_b_f = fft(x_b,N);
 
 %% Product in the frequecy domain and IFFT
@@ -62,7 +62,7 @@ for i=1:size(X_b_f,2)
     Y_f(:,i) = X_b_f(:,i) .* H_f;
 end
 
-% IDFT
+% IFFT
 y_b = real(ifft(Y_f,N));
 
 %% Post IFFT processing
@@ -70,7 +70,7 @@ y_b = real(ifft(Y_f,N));
 % sequences need to be saved.
 
 y = y_b(N/2+1:N,:);  % Save the good portion of each IFFT output
-y = y(:);           % Matrix to vector
+y = y(:);            % Matrix to vector
 
 %% Plot
 
@@ -81,7 +81,7 @@ Yf_L    = freqz(y_L, length(y_L), nFFT);
 [Yf, w] = freqz(y, length(y), nFFT);
 
 % Frequency normalization
-w = w/pi * (Fs/2)/1e3;
+w = w/pi * (Fs/2);
 
 % Mag to dB
 Xf     = mag2db(abs(Xf)/nFFT);
@@ -97,7 +97,7 @@ plot(w, Yf,   'x-')
 hold off
 grid on
 legend({'x','Linear Convolution', 'Overlap-Add'})
-xlabel('Frequency [MHz]')
+xlabel('Frequency [Hz]')
 ylabel('Amplitude [dB]')
 
 % Error between the Linear convolution and the frequency filtering
