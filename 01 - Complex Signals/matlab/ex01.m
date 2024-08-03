@@ -7,7 +7,7 @@
 
 
 %% Clear everything
-clc;        % 'clc' cleras all the text from the Command Window
+clc;        % 'clc' clears all the text from the Command Window
 clear;      % 'clear' removes all variables from the current workspace
 close all;  % 'close all' deletes all figures whose handles are not hidden.
 

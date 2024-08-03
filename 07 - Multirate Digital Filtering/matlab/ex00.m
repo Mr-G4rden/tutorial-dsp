@@ -32,7 +32,7 @@ clc;            % Clear the text from the Command Window
 clear;          % Remove all variables from the current workspace
 close all;      % Close all figures
 
-%% Matlab Exercise
+%% Exercise
 Fc = 125e3;
 Fs = 1e6;
 Ts = 1/Fs;

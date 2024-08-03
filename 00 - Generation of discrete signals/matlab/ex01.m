@@ -38,7 +38,7 @@ x_2 = sin(-2*pi*Fc_2*n*Ts);
 
 %% Figures
 
-# Scale the time vector to convert seconds to ms
+% Scale the time vector to convert seconds to ms
 t = t*1e3;
 
 figure

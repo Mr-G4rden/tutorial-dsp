@@ -25,7 +25,7 @@
 % 
 
 %% Clear everything
-clc;        % 'clc' cleras all the text from the Command Window
+clc;        % 'clc' clears all the text from the Command Window
 clear;      % 'clear' removes all variables from the current workspace
 close all;  % 'close all' deletes all figures whose handles are not hidden.
 
@@ -51,7 +51,7 @@ end
 % When the fft function processes an array, fft is evaluated for each
 % column.
 Xf = fft(X)/size(X,1);              % Size: (Row,Col) = (1024,5)
-Xf_abs = abs(Xf)/len;
+Xf_abs = abs(Xf);
 Xf_abs_dB = mag2db(Xf_abs);
 
 %% Figure

@@ -5,7 +5,7 @@
 % system is represented by the equation shown in 'ex01_eqn1.png'.
 
 %% Clear everything
-clc;        % 'clc' cleras all the text from the Command Window
+clc;        % 'clc' clears all the text from the Command Window
 clear;      % 'clear' removes all variables from the current workspace
 close all;  % 'close all' deletes all figures whose handles are not hidden.
 
@@ -16,7 +16,7 @@ Ts = 1/Fs;
 %% Exercise
 
 % Read the input signal from text file
-fileID = fopen('data.txt','r');  % Open the file for reading
+fileID = fopen('data.txt','r');   % Open the file for reading
 formatSpec = '%f';                % Define the format of the data to read
 x = fscanf(fileID,formatSpec);    % Read the file data
 fclose(fileID);                   % Close the file

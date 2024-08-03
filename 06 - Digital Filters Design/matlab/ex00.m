@@ -38,7 +38,7 @@ close all;      % Close all figures
 
 %% Parameters
 F0 =  1e3;
-F1 =  2e3;
+F1 =  6e3;
 Fs = 16e3;
 Ts = 1/Fs;
 

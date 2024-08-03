@@ -39,3 +39,4 @@ Typically, I write a configuration file to define the variables used for the sim
 - [07 - Multirate Digital Filtering](07%20-%20Multirate%20Digital%20Filtering/)
 - [08 - Frequency Domain Filtering](08%20-%20Frequency%20Domain%20Filtering/)
 - [09 - Multirate Systems](09%20-%20Multirate%20Systems/)
+- [10 - Digital Filter Banks](10%20-%20Digital%20Filter%20Banks/)

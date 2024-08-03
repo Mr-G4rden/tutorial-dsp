@@ -41,5 +41,22 @@ F_cut = 500e3;
 Wn = F_cut / (Fs*L/2);
 fir_num = fir1(fir_ord, Wn, hann(fir_ord+1));
 
+E0 = fir_num(1:L:end);
+E1 = fir_num(2:L:end);
+
+E0 = downsample(fir_num,L,0);
+E1 = downsample(fir_num,L,1);
+
+E = buffer(fir_num,L);
+E0 = E(1,:);
+E1 = E(2,:);
+
+
+
+
+
+
+
+
 
 
